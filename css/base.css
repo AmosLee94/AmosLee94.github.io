@@ -29,8 +29,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: auto;
   width: 1226px; }
 
-nav a {
-  display: block;
-  float: left; }
+nav {
+  height: 46px; }
+  nav a {
+    display: block;
+    float: left; }
 
 /*# sourceMappingURL=base.css.map */
