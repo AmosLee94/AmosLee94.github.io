@@ -1,0 +1,28 @@
+// reset
+h1, h2, h3, h4, h5, h6{margin:0;}
+
+#finance h4, #car h4, #tech h4, #edu h4, #kid h4, #astro h4, #sports h4 {
+float:left;
+font-weight:200;
+height:20px;
+line-height:20px;
+margin-right:1px;
+overflow:hidden;
+padding-top:3px;
+text-align:center;
+width:73px;
+}
+//public
+.hidden{display:none;}
+.block{display:block;}
+.left{float:left;}
+.right{float:right;}
+.container{margin-left:auto;margin-right:auto;width:1226px;}
+// nav
+nav{
+	a{
+		display:block;
+		float:left;
+
+	}
+}
