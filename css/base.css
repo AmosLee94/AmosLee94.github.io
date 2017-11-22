@@ -1,16 +1,9 @@
-h1, h2, h3, h4, h5, h6 {
+body {
   margin: 0; }
 
-#finance h4, #car h4, #tech h4, #edu h4, #kid h4, #astro h4, #sports h4 {
-  float: left;
-  font-weight: 200;
-  height: 20px;
-  line-height: 20px;
-  margin-right: 1px;
-  overflow: hidden;
-  padding-top: 3px;
-  text-align: center;
-  width: 73px; }
+ul {
+  margin-top: 0;
+  padding-left: 0; }
 
 .hidden {
   display: none; }
@@ -29,10 +22,28 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: auto;
   width: 1226px; }
 
+a {
+  text-decoration: none; }
+  a:link, a:visited, a:active, a:hover {
+    color: #000; }
+
 nav {
-  height: 46px; }
-  nav a {
+  height: 40px;
+  background-color: #363636;
+  color: #b0b0b0; }
+  nav li {
     display: block;
     float: left; }
+    nav li a {
+      line-height: 40px;
+      padding: 0 10px; }
+      nav li a:link, nav li a:visited, nav li a:active {
+        color: #b0b0b0; }
+      nav li a:hover {
+        color: #fff; }
+    nav li::before {
+      content: "|"; }
+    nav li:first-child::before {
+      display: none; }
 
 /*# sourceMappingURL=base.css.map */

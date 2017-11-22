@@ -1,16 +1,10 @@
 // reset
-h1, h2, h3, h4, h5, h6{margin:0;}
-
-#finance h4, #car h4, #tech h4, #edu h4, #kid h4, #astro h4, #sports h4 {
-float:left;
-font-weight:200;
-height:20px;
-line-height:20px;
-margin-right:1px;
-overflow:hidden;
-padding-top:3px;
-text-align:center;
-width:73px;
+body{margin:0;}
+ul{
+	margin-top:0;
+	padding-left:0;
+	// -webkit-margin-after: 0;
+	// height:1px;
 }
 //public
 .hidden{display:none;}
@@ -18,11 +12,31 @@ width:73px;
 .left{float:left;}
 .right{float:right;}
 .container{margin-left:auto;margin-right:auto;width:1226px;}
+a{text-decoration:none;&:link, &:visited, &:active ,&:hover{color: #000;}}
 // nav
 nav{
-	height:46px;
-	a{
+	$height:40px;
+	$font-color:#b0b0b0;
+	$font-highlight:#fff;
+	height:$height;
+	background-color:#363636;
+	color:$font-color;
+	li{
 		display:block;
 		float:left;
+		a{
+			line-height:$height;
+			padding: 0 10px;
+			&:link, &:visited, &:active{color: $font-color;}
+			&:hover{color: $font-highlight;}
+
+
+		}
+		&::before{
+			content: "|";
+		}
+		&:first-child::before{
+			display:none;
+		}
 	}
 }
