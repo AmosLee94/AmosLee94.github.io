@@ -1,5 +1,6 @@
 // reset
 body{margin:0;}
+header,nav,section,footer{overflow: hidden;}
 ul{
 	margin-top:0;
 	padding-left:0;
@@ -11,11 +12,20 @@ ul{
 .block{display:block;}
 .left{float:left;}
 .right{float:right;}
+.center{text-align:center;}
 .container{margin-left:auto;margin-right:auto;width:1226px;}
+.fixed-top{position: fixed;top:0;left: 0;right: 0;}
 a{text-decoration:none;&:link, &:visited, &:active ,&:hover{color: #000;}}
+.annotation{font-size:.8em;color:#575757;}
+// header
+header{
+	background-color:rgba(250,250,250,.6);
+	height:200px;
+}
 // nav
 nav{
-	$height:40px;
+	// display:none;
+	$height:400px;
 	$font-color:#b0b0b0;
 	$font-highlight:#fff;
 	height:$height;
@@ -39,4 +49,22 @@ nav{
 			display:none;
 		}
 	}
+}
+// section
+section{
+	height:700px;
+}
+// footer
+footer{
+	background-color:#eee;
+	height:100px;
+	color:#575757;
+}
+// background-canvas
+.background-canvas{
+	position: fixed;
+	top:0;
+	left:0;
+	z-index: -100;
+	background-color:#A4D3F4;
 }
