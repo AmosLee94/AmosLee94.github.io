@@ -49,14 +49,14 @@ header {
   height: 200px; }
 
 nav {
-  height: 400px;
+  height: 40px;
   background-color: #363636;
   color: #b0b0b0; }
   nav li {
     display: block;
     float: left; }
     nav li a {
-      line-height: 400px;
+      line-height: 40px;
       padding: 0 10px; }
       nav li a:link, nav li a:visited, nav li a:active {
         color: #b0b0b0; }
@@ -68,7 +68,7 @@ nav {
       display: none; }
 
 section {
-  height: 700px; }
+  height: 1000px; }
 
 footer {
   background-color: #eee;

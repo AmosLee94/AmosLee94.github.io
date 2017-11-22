@@ -106,7 +106,7 @@
 	var nav = document.getElementsByTagName('nav')[0];
 	var y0= nav.getBoundingClientRect().top+document.body.scrollTop;
 	if (window.innerHeight) var winHeight = window.innerHeight;else if ((document.body) && (document.body.clientHeight)) winHeight = document.body.clientHeight;
-	alert("offsetHeight:"+document.body.offsetHeight+";winHeight:"+winHeight+";offsetHeight:"+nav.offsetHeight+";y0:"+y0);
+	// alert("offsetHeight:"+document.body.offsetHeight+";winHeight:"+winHeight+";offsetHeight:"+nav.offsetHeight+";y0:"+y0);
 	if(document.body.offsetHeight-nav.offsetHeight-y0>winHeight)
 		window.addEventListener("scroll",function(){
 			var y= document.body.scrollTop;
