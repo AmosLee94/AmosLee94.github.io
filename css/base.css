@@ -1,9 +1,6 @@
 body {
   margin: 0; }
 
-header, nav, section, footer {
-  overflow: hidden; }
-
 ul {
   margin-top: 0;
   padding-left: 0;
@@ -27,7 +24,8 @@ ul {
 .container {
   margin-left: auto;
   margin-right: auto;
-  width: 1226px; }
+  width: 1226px;
+  overflow: hidden; }
 
 .fixed-top {
   position: fixed;
@@ -69,6 +67,22 @@ nav {
 
 section {
   height: 1000px; }
+  section .container {
+    border-left: 5px solid #eee; }
+    section .container > h1 {
+      line-height: 40px; }
+      section .container > h1::before {
+        content: "";
+        display: block;
+        float: left;
+        width: 0px;
+        height: 0px;
+        border: 20px solid #eee;
+        border-radius: 20px;
+        position: relative;
+        left: -20px; }
+    section .container p {
+      margin-left: 40px; }
 
 footer {
   background-color: #eee;

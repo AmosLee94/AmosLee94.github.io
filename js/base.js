@@ -104,7 +104,8 @@
 // nav fixed top
 (function(){
 	var nav = document.getElementsByTagName('nav')[0];
-	var pseudoNav = document.createElement("nav"); 
+	var pseudoNav = document.createElement("div");
+	pseudoNav.style.height = nav.clientHeight+'px';
 	pseudoNav.className = 'hidden';
 	document.body.insertBefore(pseudoNav,nav); // 这两种方法均可实现 
 	var y0= nav.getBoundingClientRect().top+document.body.scrollTop;
