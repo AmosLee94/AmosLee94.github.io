@@ -104,15 +104,20 @@
 // nav fixed top
 (function(){
 	var nav = document.getElementsByTagName('nav')[0];
+	var pseudoNav = document.createElement("nav"); 
+	pseudoNav.className = 'hidden';
+	document.body.insertBefore(pseudoNav,nav); // 这两种方法均可实现 
 	var y0= nav.getBoundingClientRect().top+document.body.scrollTop;
 	if (window.innerHeight) var winHeight = window.innerHeight;else if ((document.body) && (document.body.clientHeight)) winHeight = document.body.clientHeight;
-	// alert("offsetHeight:"+document.body.offsetHeight+";winHeight:"+winHeight+";offsetHeight:"+nav.offsetHeight+";y0:"+y0);
-	if(document.body.offsetHeight-nav.offsetHeight-y0>winHeight)
+	// if(document.body.offsetHeight-nav.offsetHeight-y0>winHeight)
 		window.addEventListener("scroll",function(){
 			var y= document.body.scrollTop;
-			if(y>=y0)
+			if(y>=y0){
 				nav.className = 'fixed-top';
-			else
+				pseudoNav.className = 'block';
+			}else{
 				nav.className = '';
+				pseudoNav.className = 'hidden';
+			}
 		});
 })();
