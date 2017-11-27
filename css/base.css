@@ -67,6 +67,8 @@ nav {
 
 section {
   height: 1000px; }
+  section a:link, section a:visited, section a:active, section a:hover {
+    color: #ff6700; }
   section .container {
     border-left: 5px solid #eee; }
     section .container > h1 {
