@@ -104,21 +104,61 @@
 // nav fixed top
 (function(){
 	var nav = document.getElementsByTagName('nav')[0];
-	var pseudoNav = document.createElement("div");
-	pseudoNav.style.height = nav.clientHeight+'px';
-	pseudoNav.className = 'hidden';
-	document.body.insertBefore(pseudoNav,nav); // 这两种方法均可实现 
-	var y0= nav.getBoundingClientRect().top+document.body.scrollTop;
-	if (window.innerHeight) var winHeight = window.innerHeight;else if ((document.body) && (document.body.clientHeight)) winHeight = document.body.clientHeight;
-	// if(document.body.offsetHeight-nav.offsetHeight-y0>winHeight)
-		window.addEventListener("scroll",function(){
-			var y= document.body.scrollTop;
-			if(y>=y0){
-				nav.className = 'fixed-top';
-				pseudoNav.className = 'block';
-			}else{
-				nav.className = '';
-				pseudoNav.className = 'hidden';
+
+	//添加定位用div
+	var positionDiv = addElement("div",{'style':'height:0px;'});
+	document.body.insertBefore(positionDiv,nav);
+	var y0 = positionDiv.offsetTop;
+	// 添加替代用div
+	var pseudoDiv = addElement("div",{'style':'height:'+nav.clientHeight+'px;','class':'hidden'});
+	document.body.insertBefore(pseudoDiv,nav);
+
+	window.addEventListener("scroll",function(){
+		var y1 = - document.body.getBoundingClientRect().top;
+		console.log(y0,y1);
+		if(y1 > y0){
+			removeClass(pseudoDiv,'hidden');
+			addClass(nav,'fixed-top');
+		}else{
+			addClass(pseudoDiv,'hidden');
+			removeClass(nav,'fixed-top');
+		}
+	});
+
+	function addElement(tagName,obj){
+		var _newNode = document.createElement(tagName);
+		for(var _key in obj){
+			_newNode.setAttribute(_key,obj[_key]);
+		}
+		return _newNode;
+	}
+	function classIndexOf(obj,v){
+		var arrClassName = obj.className.split(" ");
+		for(var i=0;i<arrClassName.length;i++){
+			if(arrClassName[i] == v){
+				return i;
 			}
-		});
+		}
+		return -1;
+	}
+	function addClass(obj,className){
+		if(obj.className == ""){//如果原来没有class
+			obj.className = className;
+		}else{
+			var _index = classIndexOf(obj,className);
+			if(_index == -1){//如果原来没有这个新加的class
+				obj.className += " " + className;
+			}
+		}
+	}
+	function removeClass(obj,className){
+		if(obj.className != ""){//如果以前的元素不为空
+			var arrClassName = obj.className.split(" ");
+			var _index = classIndexOf(obj,className);
+			if(_index != -1){//如果存在要删除的class
+				arrClassName.splice(_index,1);
+			}
+			obj.className = arrClassName.join(" ");
+		}
+	}
 })();
