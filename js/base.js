@@ -115,7 +115,6 @@
 
 	window.addEventListener("scroll",function(){
 		var y1 = - document.body.getBoundingClientRect().top;
-		console.log(y0,y1);
 		if(y1 > y0){
 			removeClass(pseudoDiv,'hidden');
 			addClass(nav,'fixed-top');
